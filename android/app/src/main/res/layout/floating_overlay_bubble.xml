@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <!-- Draggable Floating Side Toggle Icon -->
+    <FrameLayout
+        android:id="@+id/floating_bubble_container"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#2563EB"
+        android:elevation="8dp">
+
+        <ImageView
+            android:id="@+id/floating_bubble_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="ProfileFlow Toggle" />
+    </FrameLayout>
+
+    <!-- Slide-Out Floating Quick Fill Panel -->
+    <LinearLayout
+        android:id="@+id/floating_expanded_panel"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ProfileFlow Assistant"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="#0F172A" />
+
+        <TextView
+            android:id="@+id/tv_overlay_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upwork Signup Form Detected"
+            android:textSize="11sp"
+            android:textColor="#059669"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 1-Tap Autofill Button -->
+        <Button
+            android:id="@+id/btn_overlay_autofill"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="⚡ Auto Fill All Fields"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:background="#2563EB"
+            android:layout_marginBottom="6dp" />
+
+        <!-- AI Assistant / Customizer Button -->
+        <Button
+            android:id="@+id/btn_overlay_ai"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:text="✨ AI Assistant (Urdu)"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            android:textColor="#1E293B"
+            android:background="#F1F5F9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zero Auto-Submit · Human Review Mode"
+            android:textSize="9sp"
+            android:textColor="#64748B"
+            android:layout_marginTop="6dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
