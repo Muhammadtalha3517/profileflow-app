@@ -29,22 +29,19 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: 4. Configure Android & Get Packages
+      - name: 4. Configure & Get Packages
         run: |
-          flutter create . --platforms=android --org=com.profileflow
+          flutter create . --platforms=android --org=com.profileflow --project-name=assistant
           flutter pub get
 
-      - name: 5. Build Android APKs
+      - name: 5. Build Android APK
         run: |
           flutter build apk --debug
-          flutter build apk --release
 
-      - name: 6. Upload APK Artifacts
+      - name: 6. Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ProfileFlow-Android-APKs
-          path: |
-            build/app/outputs/flutter-apk/app-debug.apk
-            build/app/outputs/flutter-apk/app-release.apk
-          if-no-files-found: warn
+          name: ProfileFlow-Installable-APK
+          path: build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: error
           retention-days: 30
