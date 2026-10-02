@@ -29,9 +29,11 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: 4. Configure & Get Packages
+      - name: 4. Configure Android & Fix Manifest Package
         run: |
+          sed -i 's/package="com.profileflow.assistant"//g' android/app/src/main/AndroidManifest.xml
           flutter create . --platforms=android --org=com.profileflow --project-name=assistant
+          sed -i 's/package="com.profileflow.assistant"//g' android/app/src/main/AndroidManifest.xml
           flutter pub get
 
       - name: 5. Build Android APK
